@@ -1,0 +1,16 @@
+<html>
+
+<body>
+
+<h1>Formulaire de modification</h1>
+<a href="/contact/show">Liste des contacts </a>
+<form action="/contact/putaction" method="post">
+<input type="text" name="fullname" value="{{doc.FullName}}"/>
+<input type="number" name="phone" value="{{doc.Phone}}" />
+<input type="hidden" name="secretid" value="{{doc._id}}" />
+<input type="submit" value="Modifier" />
+
+</form>
+</body>
+
+</html>

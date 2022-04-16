@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Liste des contacts</title>
+</head>
+<body>
+<h1>Liste des contacts</h1>
+<a href="/contact/addform">Ajouter Contact </a>
+
+<form action="/contact/search" method="post">
+<input type="text" name="search" />
+<!-- <input type="number" name="pn" /> -->
+<input type="submit" value="OK" />
+</form>
+
+<table border="1"> 
+<thead>
+<th>Nom & prenom</th>
+<th>Tel</th>
+<th>Action</th>
+</thead>
+<tbody>
+{% for item in data %}
+<tr>
+<td>{{item.FullName}}</td>
+<td>{{ item.Phone }}</td>
+<td> 
+<a href="/contact/update/{{item._id}}">Update</a> | 
+<a href="/contact/delete/{{item._id}}">Delete</a></td>
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</body>
+
+</html>
